@@ -9,7 +9,7 @@ const input = getInput.createInterface({
 
 const seatFilling = (input) => {
 	let seats=[];
-	for(let i=0;i<input.length;i++)
+	for(let i=0;i<input.length;i++){
 	  	seats.push(Array(input[i][0]).fill().map(()=>Array(input[i][1]).fill("M")));
 	
 	for(let i=0;i<seats.length;i++){
@@ -18,13 +18,15 @@ const seatFilling = (input) => {
 			seats[i][j][seats[i][j].length-1]="A";
 		}
 	  }
-
-	  for(let i=0;i<seats[0].length;i++)
+	}
+	  for(let i=0;i<seats[0].length;i++){
 	  	seats[0][i][0]="W";
-	  for(let i=0;i<seats[seats.length-1].length;i++)
+	  for(let i=0;i<seats[seats.length-1].length;i++){
 		seats[seats.length-1][i][(seats[seats.length-1][i].length)-1]="W";
+	  }
 	  
-	return seats;
+	  return seats;
+	  }
 }
 
 
